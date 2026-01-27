@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+    <div class="dashboard-box">
+    <h1>Welcome Employee {{ user.username }}</h1>
+    <div class="nav-links">
+    <a href="{% url 'logout' %}">LOGOUT</a>
+    </div>
+    <h2>YOUR TASKS</h2>
+    <table border="1">
+        <tr>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>COMPLETE WITHIN</th>
+            <th>STATUS</th>
+            <th>ACTION</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.complete_within|date:"Y-m-d H:i" }}</td>
+            <td>
+                <span class="status {{ task.status }}">
+                    {{ task.get_status_display }}
+                </span>
+            </td>
+            <td>
+                {% if task.status == 'pending' or task.status == 'overdue' %}
+                    <a class="action-link" href="{% url 'complete_task' task.id %}">Mark as Done</a>
+                {% else %}
+                    <span class="completed-text">Completed</span>
+                {% endif %}
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">No Tasks Assigned Yet</td></tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Home</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'form.css' %}">
+</head>
+<body>
+    <div class="dashboard-box">
+    <h1>Welcome Manager {{ user.username }}</h1>
+    <div class="nav-links">
+    <a href="{% url 'add_employee' %}">ADD EMPLOYEE</a> 
+    <a href="{% url 'assign_task' %}">ASSIGN TASK</a> 
+    <a href="{% url 'logout' %}">LOGOUT</a>
+    </div>
+
+    <h2>YOUR EMPLOYEES</h2>
+    <table border="1">
+        <tr>
+            <th>PROFILE</th>
+            <th>NAME</th>
+            <th>DESIGNATION</th>
+            <th>DELETE EMPLOYEE</th>
+        </tr>
+        {% for emp in employees %}
+        <tr>
+            <td>
+                {% if emp.employee.profile_image %}
+                    <img src="{{ emp.employee.profile_image.url }}" width="50" height="50" class="profile-img">
+                {% endif %}
+            </td>
+            <td>{{ emp.employee.username }}</td>
+            <td>{{ emp.designation }}</td>
+            <td>
+                <a href="{% url 'delete_employee' emp.id %}" class="delete">DELETE</a>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="3">No Employees Yet</td></tr>
+        {% endfor %}
+    </table>
+
+    <h2>TASKS ASSIGNED</h2>
+    <table border="1">
+        <tr>
+            <th>TITLE</th>
+            <th>DESCRIPTION</th>
+            <th>ASSIGNED TO</th>
+            <th>COMPLETE WITHIN</th>
+            <th>STATUS</th>
+        </tr>
+        {% for task in tasks %}
+        <tr>
+            <td>{{ task.title }}</td>
+            <td>{{ task.description }}</td>
+            <td>{{ task.assigned_to.username }}</td>
+            <td>{{ task.complete_within|date:"Y-m-d H:i" }}</td>
+            <td>
+                <span class="status {{ task.status }}">
+                    {{ task.get_status_display }}
+                </span>
+            </td>
+        </tr>
+        {% empty %}
+        <tr><td colspan="4">No Tasks Assigned Yet</td></tr>
+        {% endfor %}
+    </table>
+    </div>
+</body>
+</html>

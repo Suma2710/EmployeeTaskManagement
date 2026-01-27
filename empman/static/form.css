@@ -1,0 +1,350 @@
+/* LOGIN PAGE */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(120deg, #2980b9, #6dd5fa);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 600;
+}
+
+
+.login-box {
+    width: 380px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0);
+}
+
+
+.login-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: black;
+}
+
+
+table {
+    width: 100%;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+}
+
+
+button {
+    width: 50%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px auto 0;
+    display: block;
+}
+
+button:hover {
+    background: #1f6391;
+}
+
+
+.login-box p {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: black;
+}
+
+
+.login-box a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-box a:hover {
+    text-decoration: underline;
+}
+
+/* SIGNUP PAGE */
+
+.signup-box {
+    width: 400px;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0);
+    margin-top: 10px;
+}
+
+
+.signup-box h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: black;
+}
+
+
+table {
+    width: 100%;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #2980b9;
+}
+
+
+button {
+    width: 50%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    margin: 10px auto 0;
+    display: block;
+}
+
+button:hover {
+    background: #1f6391;
+}
+
+
+.signup-box p {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 14px;
+    color: black;
+}
+
+
+.signup-box a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-box a:hover {
+    text-decoration: underline;
+}
+
+/* MANAGER HOME PAGE  */
+
+.dashboard-box {
+    width: 90%;
+    max-width: 1100px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px black;
+}
+
+
+.dashboard-box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.dashboard-box h2 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+
+.nav-links {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.nav-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 600;
+    color: blue;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+table th,
+table td {
+    padding: 10px;
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+table th {
+    background: #f2f4f7;
+    font-weight: 600;
+    font-size: large;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.delete{
+    text-decoration: none;
+    background-color: blue;
+    padding: 6px 12px;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.delete:hover{
+    background-color: #1f6391;
+}
+
+/* ADD EMPLOYEE PAGE  */
+
+.form-box {
+    width: 420px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px black;
+}
+
+.form-box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black
+}
+
+.form-box .nav-links {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-box .nav-links a {
+    text-decoration: none;
+    font-weight: 600;
+    color: blue;
+}
+
+.form-box .nav-links a:hover {
+    text-decoration: underline;
+}
+
+input[type="submit"] {
+    width: 60%;
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    display: block;
+    margin: 15px auto 0;
+}
+
+input[type="submit"]:hover {
+    background: #1f6391;
+}
+
+/* EMPLOYEE HOME PAGE  */
+
+.status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.status.pending {
+    background: #f39c12;
+    color: white;
+    font-weight: bold;
+}
+
+.status.done {
+    background: #27ae60;
+    color: white;
+    font-weight: bold;
+}
+
+.status.done_delay { 
+    background-color: blue;
+    color: white; 
+    font-weight: bold; 
+}
+
+.status.overdue { 
+    background-color: red;
+    color: white; 
+    font-weight: bold; 
+}
+
+.action-link {
+    text-decoration: none;
+    font-weight: 600;
+    color: blue;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+}
+
+.completed-text {
+    color: #27ae60;
+    font-weight: 600;
+}
