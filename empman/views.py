@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import MyUserForm, LoginForm, TaskForm, EmployeeProfileForm
 from .models import MyUser, Task, EmployeeProfile
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
-from django.contrib.auth.decorators import login_required
+# from django.contrib.auth.decorators import login_required
 from .decorators import role_base
 from django.http import HttpResponse
 from django.utils import timezone
@@ -55,15 +55,15 @@ def login(request):
 def manager_home(request):
     employees = EmployeeProfile.objects.filter(manager=request.user)
     tasks = Task.objects.filter(assigned_by=request.user)
-    for task in tasks:
-        task.update_status()
+    # for task in tasks:
+    #     task.update_status()
     return render(request,'manager_home.html',{'employees':employees,'tasks':tasks})
 
 @role_base('employee')
 def employee_home(request):
     tasks = Task.objects.filter(assigned_to=request.user)
-    for task in tasks:
-        task.update_status()
+    # for task in tasks:
+    #     task.update_status()
     return render(request,'employee_home.html',{'tasks':tasks})
 
 @role_base('manager')
@@ -74,7 +74,6 @@ def assign_task(request):
             task = form.save(commit=False)
             task.assigned_by = request.user
             task.status = 'pending'
-            task.complete_within = timezone.now() + timedelta(minutes=1)
             task.save()
             return redirect('manager_home')
         else:
@@ -89,9 +88,9 @@ def assign_task(request):
 def complete_task(request, task_id):
     try:
         task = Task.objects.get(id=task_id, assigned_to=request.user)
-        # task.status = 'done'
+        task.status = 'done'
         task.completed_at = timezone.now()
-        task.update_status()
+        task.save()
         return redirect('employee_home')
     except Task.DoesNotExist:
         return HttpResponse('Task not found or not assigned to you')

@@ -33,7 +33,7 @@
                 </span>
             </td>
             <td>
-                {% if task.status == 'pending' or task.status == 'overdue' %}
+                {% if task.status == 'pending'%}
                     <a class="action-link" href="{% url 'complete_task' task.id %}">Mark as Done</a>
                 {% else %}
                     <span class="completed-text">Completed</span>
