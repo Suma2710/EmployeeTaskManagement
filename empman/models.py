@@ -82,28 +82,6 @@ class Task(models.Model):
     overdue = models.BooleanField(default=False)
     completed_within = models.BooleanField(default=False)
 
-    # def update_status(self):
-    #     now = timezone.now()
-
-    #     if not self.complete_within:
-    #         return
-
-    #     if self.completed_at:
-    #         if self.completed_at <= self.complete_within:
-    #             self.status = 'done'
-    #             self.overdue = False
-    #         else:
-    #             self.status = 'done_delay'
-    #             self.overdue = True
-    #     else:
-    #         if now > self.complete_within:
-    #             self.status = 'overdue'
-    #             self.overdue = True
-    #         else:
-    #             self.status = 'pending'
-    #             self.overdue = False
-    #     self.save()
-
     def __str__(self):
         return f"{self.title}, {self.assigned_to.username}"
 
