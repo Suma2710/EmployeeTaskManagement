@@ -1,23 +1,28 @@
 /* LOGIN PAGE */
 
 body {
+    background-image: url("../static/images/login.jpg");
+    /* background: rgba(255, 255, 255, 0.75); */
+    backdrop-filter: blur(2px);
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center;
     margin: 0;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(120deg, #2980b9, #6dd5fa);
+    justify-content: center;   
+    align-items: center; 
+    /* background: linear-gradient(120deg, #2980b9, #6dd5fa); */
     font-family: 'Times New Roman', Times, serif;
     font-size: 600;
 }
-
 
 .login-box {
     width: 380px;
     background: white;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0);
+    box-shadow: 0 10px 25px gainsboro;
 }
 
 
@@ -97,7 +102,7 @@ button:hover {
     background: white;
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px rgba(0,0,0);
+    box-shadow: 0 10px 25px gainsboro;
     margin-top: 10px;
 }
 
@@ -179,7 +184,7 @@ button:hover {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px black;
+    box-shadow: 0 10px 25px gainsboro;
 }
 
 
@@ -259,7 +264,7 @@ table th {
     background: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 25px black;
+    box-shadow: 0 10px 25px gainsboro;
 }
 
 .form-box h1 {

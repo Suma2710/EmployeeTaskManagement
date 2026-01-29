@@ -8,6 +8,7 @@ venv/
 db.sqlite3
 .env
 media/
+images/
 
 # IDEs
 .vscode/
